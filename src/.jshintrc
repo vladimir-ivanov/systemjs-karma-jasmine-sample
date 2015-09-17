@@ -1,0 +1,12 @@
+{
+  "browser": true,
+  "devel": true,
+  "esnext": true,
+  "indent": 2,
+  "forin": true,
+  "nonew": true,
+  "curly": true,
+  "noempty":true,
+  "noarg": true,
+  "bitwise": true
+}
