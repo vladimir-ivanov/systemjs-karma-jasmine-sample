@@ -16,9 +16,9 @@ module.exports = function (config) {
         proxies: {
             '/base': '/'
         },
-        browserDisconnectTimeout: 10 * 1000, // 10s
+        browserDisconnectTimeout: 10 * 1000,
         browserDisconnectTolerance: 2,
-        browserNoActivityTimeout: 2 * 60 * 1000, // 2m
+        browserNoActivityTimeout: 2 * 60 * 1000,
 
         singleRun: true,
         browsers: ['Chrome'],
