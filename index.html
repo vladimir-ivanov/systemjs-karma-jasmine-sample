@@ -32,13 +32,19 @@
     <div class="row">
         <ul id="list-items" class="col s7 collection"></ul>
     </div>
+
+    <div id="list-items-counter"></div>
 </div>
 
 <template id="list-item-template">
     <li class="collection-item" data-id="{{id}}">
         <span>{{itemName}}</span>
-        <button class="waves-effect waves-light btn">Remove</button>
+        <button class="waves-effect waves-light btn">Delete</button>
     </li>
+</template>
+
+<template id="counter-template">
+    <span>{{numberOfItems}}</span> in the list
 </template>
 </body>
 </html>

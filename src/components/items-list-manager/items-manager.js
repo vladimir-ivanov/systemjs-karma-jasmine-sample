@@ -1,4 +1,5 @@
 import ListItemComponent from './list-item-component';
+import ListCounterComponent from './list-counter-component';
 import _ from 'underscore';
 
 //manages the list of items
@@ -8,6 +9,10 @@ export default class ItemsManager {
         this._domElems = {};
         this._listDomRefs = {}; //keep to reduce dom access -> more efficient
         this._listItemComponent = new ListItemComponent();
+        this._listCounterComponent = new ListCounterComponent();
+        this._itemsCount = {
+            numberOfItems: 0
+        };
     }
 
     initialize() {
@@ -15,6 +20,7 @@ export default class ItemsManager {
         this._bindEvents();
         //todo - restrict to some MAX_LIMIT
         this._items = [];
+        this._domElems.listCounter.appendChild(this._listCounterComponent.compile(this._itemsCount));
 
         //todo - should be wrapped into a separate class and imported properly - a bit hacky as it stands to observe array
         Array.observe(this._items, change => {
@@ -26,6 +32,8 @@ export default class ItemsManager {
             } else {
                 this._removeDomItem(change[0].removed[0]);
             }
+
+            this._itemsCount.numberOfItems = this._items.length;
         });
     }
 
@@ -48,6 +56,7 @@ export default class ItemsManager {
         this._domElems.addButton = document.getElementById('add-button');
         this._domElems.textInput = document.getElementById('add-item');
         this._domElems.list = document.getElementById('list-items');
+        this._domElems.listCounter = document.getElementById('list-items-counter');
     }
 
     _bindEvents() {
