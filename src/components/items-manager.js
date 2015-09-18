@@ -5,14 +5,13 @@ import _ from 'underscore';
 //manages the list of items
 export default class ItemsManager {
     constructor() {
-        //not truly private like TypeScript, but _something denotes pseudo private
         this._domElems = {};
         this._listDomRefs = {}; //keep to reduce dom access -> more efficient
         this._listItemComponent = new ListItemComponent();
         this._listCounterComponent = new ListCounterComponent();
         this._itemsCount = {
             numberOfItems: 0
-        };
+        }; //need an object to observe for changes
     }
 
     initialize() {

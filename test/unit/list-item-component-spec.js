@@ -1,4 +1,4 @@
-import ListItemComponent from '../../src/components/items-list-manager/list-item-component';
+import ListItemComponent from '../../src/components/list-item-component';
 import _ from 'underscore';
 
 _.templateSettings = {

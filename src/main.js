@@ -1,4 +1,4 @@
-import ItemsManager from './components/items-list-manager/items-manager';
+import ItemsManager from './components/items-manager';
 import _ from 'underscore';
 
 _.templateSettings = {

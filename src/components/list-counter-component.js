@@ -3,7 +3,6 @@ import _ from 'underscore';
 //manages the list of items
 export default class ListCounterComponent {
     constructor() {
-        //not truly private like TypeScript
         this._template = document.getElementById('counter-template');
         this._domEl = null;
     }
